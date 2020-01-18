@@ -1,0 +1,45 @@
+﻿
+<h2>Editare recenzie</h2>
+
+<form method="post" action="/Recenzie/Edit/@ViewBag.Recenzie.IDRecenzie">
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+    <label>Titlu Recenzie:</label>
+
+    <input type="text" name="Titlu" value="@ViewBag.Recenzie.Titlu"/>
+
+    <br />
+
+    <label>Descriere recenzie:</label>
+
+    <textarea type="text" name="Descriere" >@ViewBag.Recenzie.Descriere</textarea>
+
+    <br />
+
+    <label>Nota Recenzie:</label>
+
+    <input type="text" name="Nota" value="@ViewBag.Recenzie.Nota" />
+
+    <br />
+
+    <label>Nume utilizator:</label>
+
+    <input type="text" name="NumeUtilizator" value="@ViewBag.Recenzie.NumeUtilizator" />
+
+    <br />
+
+    <label>Selectati filmul</label>
+
+    <select name="IDFilm">
+        @foreach (var film in ViewBag.Filme)
+        {
+            <option @{ if (film.IDFilm == ViewBag.Film.IDFilm) { @: selected="selected"
+                   } }
+                    value="@film.IDFilm">@film.Denumire</option>
+        }
+    </select>
+
+    <br />
+
+    <button class="btn btn success" type="submit">Modifica Recenzie</button>
+
+</form>

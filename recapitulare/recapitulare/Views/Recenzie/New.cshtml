@@ -1,0 +1,43 @@
+﻿
+<h2>Adaugare recenzie noua</h2>
+
+<form method="post" action="/Recenzie/New">
+
+    <label>Titlu Recenzie:</label>
+
+    <input type="text" name="Titlu" />
+
+    <br />
+
+    <label>Descriere recenzie:</label>
+
+    <textarea type="text" name="Descriere"></textarea>
+
+    <br />
+
+    <label>Nota Recenzie:</label>
+
+    <input type="text" name="Nota" />
+
+    <br />
+
+    <label>Nume utilizator:</label>
+
+    <input type="text" name="NumeUtilizator" />
+
+    <br />
+
+    <label>Selectati filmul</label>
+
+    <select name="IDFilm">
+        @foreach (var film in ViewBag.Filme)
+        {
+            <option value="@film.IDFilm">@film.Denumire</option>
+        }
+    </select>
+
+    <br />
+
+    <button class="btn btn success" type="submit">Adauga recenzie</button>
+
+</form>

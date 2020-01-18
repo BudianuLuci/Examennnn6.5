@@ -1,0 +1,28 @@
+﻿
+
+<h1>Afisare Recenzie</h1>
+
+<h2>@ViewBag.Recenzie.Titlu</h2>
+<p>@ViewBag.Recenzie.Descriere</p>
+<p>@ViewBag.Recenzie.Nota</p>
+<p>@ViewBag.Recenzie.NumeUtilizator</p>
+<p>@ViewBag.Film.Denumire</p>
+
+<a class="btn btn-success" href="/Recenzie/Edit/@ViewBag.Recenzie.IDRecenzie">Modifica Recenzie</a>
+<br />
+<form method="post" action="/Recenzie/Delete/@ViewBag.Recenzie.IDRecenzie">
+    <!--IMPORTANT PT STERGERE-->
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+    <br />
+    <button class="btn btn-success" type="submit">Sterge Recenzie</button>
+
+</form>
+
+<br />
+<hr />
+<a class="btn btn-success" href="/Recenzie/Index">Inapoi la Recenzii</a>
+<br /><br />
+      <a class="btn btn-info" href="/Recenzie/New">Adauga Recenzie</a>
+<br />
+
+

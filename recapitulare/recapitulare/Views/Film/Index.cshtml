@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Lista filme";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@foreach (var film in ViewBag.Filme)
+{
+    <p>@film.Denumire</p>
+    <a class="btn btn-success" href="/Film/Show/@film.IDFilm">Afisare film</a>
+    <a class="btn btn-success" href="/Film/Edit/@film.IDFilm">Editare film</a>
+    <br />
+    <hr />
+    <br />
+}
+<br />
+<a class="btn btn-info" href="/Film/New">Adauga un nou film</a>
+<br />
+

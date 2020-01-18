@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Lista recenzii";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@foreach (var recenzie in ViewBag.Recenzii)
+{
+    <p>@recenzie.Titlu</p>
+    <p>@recenzie.Descriere</p>
+    <p>@recenzie.Nota</p>
+    <p>@recenzie.NumeUtilizator</p>
+    <p>@recenzie.IDFilm</p>
+    <a class="btn btn-success" href="/Recenzie/Show/@recenzie.IDRecenzie">Afisare recenzie</a>
+    <a class="btn btn-success" href="/Recenzie/Edit/@recenzie.IDRecenzie">Editare recenzie</a>
+    <br />
+    <hr />
+    <br />
+}
+<br />
+<a class="btn btn-info" href="/Recenzie/New">Adauga o noua recenzie</a>
+<br />
+
